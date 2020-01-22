@@ -1,5 +1,3 @@
-<p id="notice"><%= notice %></p>
-
 <h1 class="_text-center _pb-1">Craigslist</h1>
 
 <table>
@@ -21,13 +19,13 @@
         <td>$<%= ad.price %></td>
         <td><%= ad.created_at.strftime("%m/%d/%Y") %></td>
         <td>
-          <% if ad.image.attached? %>
-            <image src="<%= (url_for(ad.image))%>">
-          <% end%>
+          <%# if ad.images.attached? %>
+            <!-- <image src="<%= (url_for(ad.images[0]))%>"> -->
+          <%# end %>
         </td>
         <td><%= link_to 'Show', ad %></td>
         <td><%#= link_to 'Edit', edit_ad_path(ad) %></td>
-        <td><%#= link_to 'Destroy', ad, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to 'Destroy', ad, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
     <% end %>
   </tbody>
